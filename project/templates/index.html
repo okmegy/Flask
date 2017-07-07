@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>My Webpage</title>
-</head>
-<body>
-    <ul id="navigation">
-    {% for item in navigation %}
-        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-    {% endfor %}
-    </ul>
-
-    <h1>My Webpage</h1>
-    {{ a_variable }}
-
-    {# a comment #}
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>Hi, {{user.nickname}}!</h1>
+{% for post in posts %}
+<div><p>{{post.author.nickname}} says: <b>{{post.body}}</b></p></div>
+{% endfor %}
+{% endblock %}
